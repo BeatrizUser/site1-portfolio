@@ -14,7 +14,7 @@ function NavMenu() {
 
         <Container className="NavBar-Container">
           <Navbar.Brand href="#home">
-            <img className="NavBar-LogoTipo" alt="" src={Logo} width="30" height="30" className="d-inline-block align-top"/>
+            <img alt="" src={Logo} width="30" height="30" className="d-inline-block align-top"/>
             <spam className="NavBar-Logo">Projeto Marvel</spam>
           </Navbar.Brand>
         </Container>
