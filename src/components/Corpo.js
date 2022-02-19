@@ -1,11 +1,12 @@
+import Slider from './Slider';
+import Rodape from './Rodape';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import './style/corpo.css';
-import Slider from './Slider';
 
 function Corpo() {
   return (
-    <>
+    <div className='body-corpo'>
       <Slider/>
       <Container>
         <Row>
@@ -33,7 +34,8 @@ function Corpo() {
           </Col>
         </Row>
       </Container>
-    </>
+      <Rodape/>
+    </div>
   );
 }
 
