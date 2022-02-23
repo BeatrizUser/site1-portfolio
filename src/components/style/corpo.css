@@ -1,6 +1,7 @@
 body{
     height: 100%;
     position: relative;
+    background-color: #282c34;
 }
 .Corpo-Topo{
     min-height: 100%;

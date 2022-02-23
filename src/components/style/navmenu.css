@@ -1,6 +1,14 @@
+.align-center{
+    display: flex;
+    justify-content: center;
+}
 .NavBar-Logo{
     padding-left: 5px;
 }
 .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
     justify-content: center;
+}
+.logo{
+    width: 30px;
+    height: 30px; 
 }
