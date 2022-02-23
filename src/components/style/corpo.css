@@ -1,6 +1,13 @@
-.body-corpo{
+body{
+    height: 100%;
+    position: relative;
+}
+.Corpo-Topo{
+    min-height: 100%;
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+}
+.Corpo-Conteudo1{
+    padding-top: 3rem;
 }

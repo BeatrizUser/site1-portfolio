@@ -1,16 +1,13 @@
-import Slider from './Slider';
-import Rodape from './Rodape';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import './style/corpo.css';
 
 function Corpo() {
   return (
-    <div className='body-corpo'>
-      <Slider/>
-      <Container>
+    <div className='Corpo-Topo'>
+      <Container className='Corpo-Conteudo1'>
         <Row>
-          <Col xs={6}>
+          <Col xs={6} className='Corpo-Coluna1-2'>
             <Card>
               <Card.Body>
                 <Card.Title>Personagens</Card.Title>
@@ -21,7 +18,7 @@ function Corpo() {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className='Corpo-Coluna2-2'>
             <Card>
               <Card.Body>
                 <Card.Title>Novidades</Card.Title>
@@ -34,7 +31,6 @@ function Corpo() {
           </Col>
         </Row>
       </Container>
-      <Rodape/>
     </div>
   );
 }
