@@ -1,37 +1,30 @@
-import { Container, Navbar, Form, Nav, FormControl, Button, Row} from 'react-bootstrap';
+import { Container, Navbar,NavDropdown, Form, Nav, FormControl, Button, Row} from 'react-bootstrap';
 import Logo from './assets/logoMarvel.png'
 import './style/navmenu.css'
 
 
 function NavMenu() {
     return (
-    <Navbar className="NavBar" bg="dark" variant="dark">
-        <Container className="NavBar-Container">
-          <Row xs={1} md={4}>
-            <Navbar.Brand href="#home" >
-              <img alt="" src={Logo} className="logo d-inline-block align-top"/>
-              <spam className="NavBar-Logo">Projeto Marvel</spam>
-            </Navbar.Brand>
-            <div className='align-center'>
-              <Nav defaultActiveKey="/home" as="ul">
-                <Nav.Item as="li">
-                  <Nav.Link href="/home">Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                  <Nav.Link eventKey="link-1">Novidades</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                  <Nav.Link eventKey="link-2">Sobre</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </div>
-            <Form className="d-flex align-center" md="auto">
-              <FormControl type="search" placeholder="Search" className="me-2" aria-label="Procurar" style={{width: "auto"}}/>
-              <Button variant="dark">Busca</Button>
-            </Form>
-          </Row>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img alt="" src={Logo} className="logo d-inline-block align-top" />
+            <spam className="NavBar-Logo">Projeto Marvel</spam>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link eventKey="link-1">Novidades</Nav.Link>
+              <Nav.Link eventKey="link-2">Sobre</Nav.Link>               
+            </Nav>
+              <Form className="d-flex align-center" md="auto">
+                <FormControl type="search" placeholder="Search" className="me-2" aria-label="Procurar" style={{ width: "auto" }} />
+                <Button variant="dark">Busca</Button>
+              </Form>
+          </Navbar.Collapse>
         </Container>
-    </Navbar>
+      </Navbar>
     );
   }
   
