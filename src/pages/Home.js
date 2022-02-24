@@ -1,5 +1,5 @@
 import '../components/style/home.css';
-import Topo from '../components/Topo';
+import NavMenu from '../components/NavMenu';
 import Corpo from '../components/Corpo';
 import Slider from '../components/Slider';
 import Rodape from '../components/Rodape';
@@ -9,7 +9,7 @@ import Rodape from '../components/Rodape';
 function Home() {
   return (
     <div className="App">
-      <Topo/>
+      <NavMenu/>
       <Slider/>
       <Corpo/>
       <Rodape/>
