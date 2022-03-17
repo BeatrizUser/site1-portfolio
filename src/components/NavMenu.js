@@ -1,4 +1,4 @@
-import { Container, Navbar,NavDropdown, Form, Nav, FormControl, Button, Row} from 'react-bootstrap';
+import { Container, Navbar, Form, Nav, FormControl, Button} from 'react-bootstrap';
 import Logo from './assets/logoMarvel.png'
 import './style/navmenu.css'
 
@@ -9,7 +9,7 @@ function NavMenu() {
         <Container>
           <Navbar.Brand href="#home">
             <img alt="" src={Logo} className="logo d-inline-block align-top" />
-            <spam className="NavBar-Logo">Projeto Marvel</spam>
+            <span className="NavBar-Logo">Projeto Marvel</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
