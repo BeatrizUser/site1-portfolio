@@ -14,12 +14,12 @@ function NavMenu() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link eventKey="link-1">Novidades</Nav.Link>
-              <Nav.Link eventKey="link-2">Sobre</Nav.Link>               
+              <Nav.Link className='menu-animado' href="/home">Home</Nav.Link>
+              <Nav.Link className='menu-animado' eventKey="link-1">Novidades</Nav.Link>
+              <Nav.Link className='menu-animado' eventKey="link-2">Sobre</Nav.Link>               
             </Nav>
               <Form className="d-flex align-center" md="auto">
-                <FormControl type="search" placeholder="Search" className="me-2" aria-label="Procurar" style={{ width: "auto" }} />
+                <FormControl type="search" placeholder="Search" className="me-2" aria-label="Procurar" style={{ width: "50vw"}} />
                 <Button variant="dark">Busca</Button>
               </Form>
           </Navbar.Collapse>

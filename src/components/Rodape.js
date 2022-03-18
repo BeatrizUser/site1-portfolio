@@ -6,7 +6,7 @@ function Rodape(){
     return(
       <footer className="footer-copyright">
         <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} Copyright: <strong> Desenvolvido por <a href="https://github.com/BeatrizUser">Beatriz Machado</a> </strong>
+          &copy; {new Date().getFullYear()} Copyright: <strong>Desenvolvido por</strong> <a href="https://github.com/BeatrizUser">Beatriz Machado</a> 
         </div>
       </footer>
   )

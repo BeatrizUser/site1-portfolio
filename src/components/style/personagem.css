@@ -1,21 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
+.objeto-span{
+  content: '';
+  background-color: #f70000;
+  position: absolute;
+  width: 95%;
+  height: 102%;
+  border-radius: 40% 65% 40% 60%;
+  z-index: -10;
+  margin: 20px;
+}
+.objeto{
+  position: absolute;
+  width: 100vw;
+  height: 85vh;
+  border-radius: 40% 65% 40% 60%;
+  z-index: -10;
+}
+
+.profile-img{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .profile-photo{
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
 }
 .profile{
   background-color: white;
   color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
 }
 .profile-header{
-  max-width: 100%;
+  height: fit-content;
 }
+.profile-header-photo{
+  object-fit: cover;
+  height: 415px;
+  min-width: 102vw;
+}
+
 .profile-details{
   display: flex;
-  justify-content: space-between;
   padding: 20px;
 }
 .profile-title{
