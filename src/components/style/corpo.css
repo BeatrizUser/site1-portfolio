@@ -1,0 +1,14 @@
+body{
+    height: 100%;
+    position: relative;
+    background-color: #282c34;
+}
+.Corpo-Topo{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Corpo-Conteudo1{
+    padding-top: 3rem;
+}

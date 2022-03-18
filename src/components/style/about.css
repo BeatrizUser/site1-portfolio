@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+.about-section{
+    display: flex;
+    height: 85vh;
+    align-items: center;
+}
+
+.objeto-span{
+    content: '';
+    background-color: #ffffff04;
+    position: absolute;
+    width: 95%;
+    height: 102%;
+    border-radius: 40% 65% 40% 60%;
+    z-index: -10;
+    margin: 20px;
+}
+.objeto{
+    position: absolute;
+    width: 100vw;
+    height: 85vh;
+    border-radius: 40% 65% 40% 60%;
+    z-index: -10;
+}
+
+.row{
+    display: flex;
+    align-content: flex-start
+}
+.col{
+    margin: 5px;
+    padding: 10px;
+}
+
+.about-container{
+    font-family: 'Oswald', sans-serif;
+}
+.about-row1{
+    font-size: 30px;
+}
+
+.about-row1-col1{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-row1-col2{
+    background-color: none;
+}
+
+
+.about-row2{
+    background-color: none;
+}
+.about-row2-col1{
+    background-color: #6e7a91;
+}
+.about-row2-col2{
+    background-color: #2e394d;
+    color: #fff;
+}
+
+
+.about-row3{
+    background-color: none;
+}
+.about-row3-col1{
+    background-color: #2e394d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.about-row3-col2{
+    background-color: #6e7a91;
+}
+.about-row3-col2-row1, .about-row3-col2-row2{
+    height: 50%;
+    justify-content: center;
+}
