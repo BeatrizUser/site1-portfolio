@@ -1,83 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
-.objeto-span{
-  content: '';
-  background-color: #f70000;
-  position: absolute;
-  width: 95%;
-  height: 102%;
-  border-radius: 40% 65% 40% 60%;
-  z-index: -10;
-  margin: 20px;
-}
-.objeto{
-  position: absolute;
-  width: 100vw;
-  height: 85vh;
-  border-radius: 40% 65% 40% 60%;
-  z-index: -10;
-}
-
-.profile-img{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.profile-photo{
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.profile{
-  background-color: white;
-  color: #2e2e2e;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  align-items: center;
-}
-.profile-header{
-  height: fit-content;
-}
-.profile-header-photo{
-  object-fit: cover;
-  height: 415px;
-  min-width: 102vw;
-}
-
-.profile-details{
-  display: flex;
-  padding: 20px;
-}
-.profile-title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px;
-}
-h1{
-  font-size: 45px;
-  text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
-}
-h2{
-  font-size: 40px;
-}
-h3{
-  font-size: 35px;
+*{
   font-family: 'Oswald', sans-serif;
 }
-h4{
-  font-size: 20px;
+.Personagem_InfoArea{
+  padding: 10px 10vw;
+  background-color: aliceblue;
+  display: flex;
 }
-h5{
-  font-size: 16px;
-  font-weight: bold;
+.Personagem_BackDrop{
+  margin: -15px !important;
+  width: 110vw;
+  height: 33vh;
+  object-fit: cover;
+  align-items: center;
 }
-h6{
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+.Personagem_FotoProfile{
+  margin-right: 10px;
+  width: 35vw;
+  height: 55vw;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.Personagem-Info{
+  width: 300px;
+  color: rgb(29, 29, 29);
 }
