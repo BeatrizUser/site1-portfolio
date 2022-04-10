@@ -12,7 +12,6 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 import PersonagemPage from '../pages/Personagem'
 import AboutPage from '../pages/About'
 
-
 export default function Index() {
   return (
     <Router>
@@ -38,9 +37,7 @@ export default function Index() {
       </Navbar>
 
       <Switch>
-        <Route path="/personagens">
-          <Personagem/>
-        </Route>
+        <Route path="/personagens/:id" component={Personagem}/>
         <Route path="/about">
           <About/>
         </Route>
