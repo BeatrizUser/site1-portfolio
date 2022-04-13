@@ -15,7 +15,6 @@ function NavMenu() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link className='menu-animado' href="/home">Home</Nav.Link>
-              <Nav.Link className='menu-animado' eventKey="link-1">Novidades</Nav.Link>
               <Nav.Link className='menu-animado' eventKey="link-2">Sobre</Nav.Link>               
             </Nav>
               <Form className="d-flex align-center" md="auto">

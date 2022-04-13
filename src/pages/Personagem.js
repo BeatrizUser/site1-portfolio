@@ -1,6 +1,4 @@
-import { Col, Container, Row, Button, Spinner } from 'react-bootstrap'
-import FotoPersonagem from '../components/assets/VandaVision.jpg'
-import FotoProfile from '../components/assets/VandaVision.jpg'
+import { Col, Row} from 'react-bootstrap'
 import axios from 'axios'
 import React from 'react'
 import '../components/style/personagem.css'
@@ -35,6 +33,9 @@ class PersonagemClass extends React.Component {
     _montaImagem(image, aspect){
         return image.path + "/" + aspect +"." + image.extension
     }
+    _montaImagemFullSize(image){
+        return image.path + "." + image.extension
+    }
 
     _montaListaSeries(){
         const listaSeries = this.state.personagem.series.items
@@ -68,7 +69,7 @@ class PersonagemClass extends React.Component {
             <div>
                  <Row>
                      <Col>
-                         <img className='Personagem_BackDrop' src={this._montaImagem(this.state.personagem.thumbnail, "landscape_incredible")} alt=''/>
+                         <img className='Personagem_BackDrop' src={this._montaImagemFullSize(this.state.personagem.thumbnail)} alt=''/>
                      </Col>
                  </Row>
                  <Row className='Personagem_InfoArea'>

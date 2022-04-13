@@ -37,7 +37,6 @@ const App = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/">Home</Link>
-            <Link to="/personagens">Personagens</Link>
             <Link to="/about">Sobre</Link>               
           </Nav>
             <Form onSubmit={onSubmit} className="d-flex align-center" md="auto">

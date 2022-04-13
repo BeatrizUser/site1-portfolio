@@ -21,7 +21,7 @@ class ResultadosBuscaClass extends React.Component {
 
     async _Busca(input) {
         try {
-            const response = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${input}&apikey=0843d25996d0a99345630a3e6035a7e7`)
+            const response = await axios.get(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${input}&apikey=0843d25996d0a99345630a3e6035a7e7`)
             const listaResultados = response.data.data.results
             this.setState({ listaResultados })
             console.log(listaResultados)

@@ -10,15 +10,14 @@
 }
 .Personagem_BackDrop{
   margin: -15px !important;
-  width: 110vw;
-  height: 33vh;
+  width: 100vw;
+  height: 35vh;
   object-fit: cover;
-  align-items: center;
 }
 .Personagem_FotoProfile{
   margin-right: 10px;
-  width: 35vw;
-  height: 55vw;
+  width: 20vw;
+  height: 25vw;
   object-fit: cover;
   border-radius: 5px;
 }
