@@ -1,8 +1,9 @@
-import { Col, Row} from 'react-bootstrap'
+import { Col, Row, Spinner} from 'react-bootstrap'
 import axios from 'axios'
 import React from 'react'
 import '../components/style/personagem.css'
-import { useParams } from 'react-router';
+import { useParams} from 'react-router';
+import {Link} from "react-router-dom"
 
 export default function Personagem () {
     const params = useParams();
@@ -38,31 +39,20 @@ class PersonagemClass extends React.Component {
     }
 
     _montaListaSeries(){
-        const listaSeries = this.state.personagem.series.items
-
-        const arrayDeDivdeSeries = [];
-        for(const serie of listaSeries) {
-            arrayDeDivdeSeries.push((
+        return this.state.personagem.series.items.map((serie)=>{
+            console.log(serie)
+            const idserie = serie.resourceURI
+            return (
                 <div>
-                    <a href={serie.resourceURI}>{serie.name}</a>
-                </div>
-            ));
-        }
-
-        return arrayDeDivdeSeries;
-    }
-
-    _montaListaSeriesV2(){
-        return this.state.personagem.series.items.map((serie)=>(
-            <div>
-                <a href={serie.resourceURI}>{serie.name}</a>
+                <Link to={`/series/${idserie.split("/")[6]}`}>{serie.name}</Link>
             </div>
-        ));
+            )
+        });
     }
   
     render() {
         if (!this.state.personagem){
-            return (<div>Not Found</div>)
+            return (<div className='Spinner'><Spinner animation="border" /></div>)
         }
 
         return(
@@ -82,7 +72,7 @@ class PersonagemClass extends React.Component {
                             <Row>
                                 <Col>
                                 <Row>Lista Séries</Row>
-                                <Row>{this._montaListaSeriesV2()}</Row>
+                                <Row>{this._montaListaSeries()}</Row>
                                 </Col>
                             </Row>
                      </Col>

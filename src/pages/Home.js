@@ -13,6 +13,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 
 import PersonagemPage from '../pages/Personagem'
 import AboutPage from '../pages/About'
+import SeriesPage from '../pages/Series'
 
 import { useHistory } from 'react-router-dom';
 
@@ -49,6 +50,7 @@ const App = () => {
 
     <Switch>
       <Route path="/personagens/:id" component={PersonagemPage} />
+      <Route path="/series/:id" component={SeriesPage} />
       <Route path="/about">
         <About/>
       </Route>
@@ -85,6 +87,13 @@ function Personagem(){
   return (
     <>
       <PersonagemPage />
+    </>
+  )
+}
+function Serie(){
+  return (
+    <>
+      <SeriesPage/>
     </>
   )
 }
