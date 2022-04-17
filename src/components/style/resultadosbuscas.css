@@ -13,3 +13,9 @@ img:hover{
 .listsapersonagens{
     display: flex;
 }
+li{
+    width: 150px;
+}
+.filtro{
+    padding-top: 25px;
+}

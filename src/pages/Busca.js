@@ -37,14 +37,14 @@ class ResultadosBuscaClass extends React.Component {
     _montaPersonagensResults(){
         return this.state.listaResultados1.map((item)=>(
             <li>
-                <img src={this._montaImagem(item.thumbnail, "standard_large")}/><Link to={`/personagens/${item.id}`}>{item.name}</Link>
+                <a href={`/personagens/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/personagens/${item.id}`}>{item.name}</Link>
             </li>
         ));
     }
     _montaSeriesResults(){
         return this.state.listaResultados2.map((item)=>(
             <li>
-                <img src={this._montaImagem(item.thumbnail, "standard_large")}/><Link to={`/series/${item.id}`}>{item.title}</Link>
+                <a href={`/series/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/series/${item.id}`}>{item.title}</Link>
             </li>
         ));
     }
@@ -54,10 +54,9 @@ class ResultadosBuscaClass extends React.Component {
 
     render() {
         return(
-            <Container>
-                
-                <Form className="d-flex align-center" md="auto">
-                    <FormControl type="search" placeholder="Filtrar" className="me-2" aria-label="Filtrar" style={{ width: "10vw"}} />
+            <Container>               
+                <Form className="d-flex align-center filtro" md="auto">
+                    <FormControl type="search" placeholder="Filtrar" className="me-2" aria-label="Filtrar" style={{ width: "25vw"}} />
                     <Button variant="dark">Filtrar</Button>
                 </Form>
 
