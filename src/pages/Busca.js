@@ -1,4 +1,4 @@
-import { Container, Row} from 'react-bootstrap';
+import { Container, Row, Col, FormControl, Button, Form} from 'react-bootstrap';
 import '../components/style/resultadosbuscas.css'
 import React from 'react'
 import { useLocation } from 'react-router-dom';
@@ -36,26 +36,41 @@ class ResultadosBuscaClass extends React.Component {
     }
     _montaPersonagensResults(){
         return this.state.listaResultados1.map((item)=>(
-            <div>
-                <Link to={`/personagens/${item.id}`}>{item.name}</Link>
-            </div>
+            <li>
+                <img src={this._montaImagem(item.thumbnail, "standard_large")}/><Link to={`/personagens/${item.id}`}>{item.name}</Link>
+            </li>
         ));
     }
     _montaSeriesResults(){
         return this.state.listaResultados2.map((item)=>(
-            <div>
-                <Link to={`/series/${item.id}`}>{item.title}</Link>
-            </div>
+            <li>
+                <img src={this._montaImagem(item.thumbnail, "standard_large")}/><Link to={`/series/${item.id}`}>{item.title}</Link>
+            </li>
         ));
+    }
+    _montaImagem(image, aspect){
+        return image.path + "/" + aspect +"." + image.extension
     }
 
     render() {
         return(
             <Container>
-                <Row>Personagens</Row>
-                <Row>{this._montaPersonagensResults()}</Row>
-                <Row>Series</Row>
-                <Row>{this._montaSeriesResults()}</Row>
+                
+                <Form className="d-flex align-center" md="auto">
+                    <FormControl type="search" placeholder="Filtrar" className="me-2" aria-label="Filtrar" style={{ width: "10vw"}} />
+                    <Button variant="dark">Filtrar</Button>
+                </Form>
+
+                <Row>
+                <div>Personagens</div>
+                    <div className='listsapersonagens'>{this._montaPersonagensResults()}</div>
+                </Row>             
+                <Row>
+                    <Col>
+                        <div>Series</div>
+                        <div className='listsaseries'>{this._montaSeriesResults()}</div>
+                    </Col>
+                </Row>
             </Container>
         )
     }

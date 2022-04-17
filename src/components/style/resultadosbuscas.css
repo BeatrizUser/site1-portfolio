@@ -1,0 +1,15 @@
+img{
+    border-radius: 5px;
+    transition: all 1s ease;
+}
+img:hover{
+    opacity: 0.5;
+}
+.listsaseries{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.listsapersonagens{
+    display: flex;
+}

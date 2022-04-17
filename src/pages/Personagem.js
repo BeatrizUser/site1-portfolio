@@ -57,6 +57,7 @@ class PersonagemClass extends React.Component {
 
         return(
             <div>
+               
                  <Row>
                      <Col>
                          <img className='Personagem_BackDrop' src={this._montaImagemFullSize(this.state.personagem.thumbnail)} alt=''/>
