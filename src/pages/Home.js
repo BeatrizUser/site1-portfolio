@@ -83,20 +83,6 @@ function Home(){
     </>
   )
 }
-function Personagem(){
-  return (
-    <>
-      <PersonagemPage />
-    </>
-  )
-}
-function Serie(){
-  return (
-    <>
-      <SeriesPage/>
-    </>
-  )
-}
 function About(){
   return(
     <>
