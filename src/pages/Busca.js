@@ -1,4 +1,4 @@
-import { Container, Row, Col, FormControl, Button, Form} from 'react-bootstrap';
+import { Container, Row, Col, FormControl, Button, Form, Spinner} from 'react-bootstrap';
 import '../components/style/resultadosbuscas.css'
 import React from 'react'
 import { useLocation } from 'react-router-dom';
@@ -29,8 +29,8 @@ class ResultadosBuscaClass extends React.Component {
             const ListaPersonagens = resp1.data.data.results
             const ListaPersonagens_Filtrada = resp1.data.data.results
             const ListaSeries = resp2.data.data.results
-            const ListaSeries_Filtrada = resp1.data.data.results
-            this.setState({ ListaPersonagens, ListaSeries, ListaPersonagens_Filtrada })
+            const ListaSeries_Filtrada = resp2.data.data.results
+            this.setState({ ListaPersonagens, ListaSeries, ListaPersonagens_Filtrada, ListaSeries_Filtrada })
             console.log(ListaPersonagens, ListaSeries)
             
         } catch (error) {
@@ -46,7 +46,7 @@ class ResultadosBuscaClass extends React.Component {
     }
     _montaSeriesResults(){
         
-        return this.state.ListaSeries.map((item)=>(
+        return this.state.ListaSeries_Filtrada.map((item)=>(
             <li>
                 <a href={`/series/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/series/${item.id}`}>{item.title}</Link>
             </li>
@@ -70,6 +70,9 @@ class ResultadosBuscaClass extends React.Component {
     }
 
     render() {
+        if (this.state.ListaSeries.length == 0){
+            return (<div className='Spinner'><Spinner animation="border" /></div>)
+        }
         return(
             <Container>               
                 <Form className="d-flex align-center filtro" md="auto">
@@ -78,8 +81,10 @@ class ResultadosBuscaClass extends React.Component {
                 </Form>
 
                 <Row>
-                <div>Personagens</div>
-                    <div className='listapersonagens'>{this._montaPersonagensResults()}</div>
+                    <Col>
+                        <div>Personagens</div>
+                        <div className='listapersonagens'>{this._montaPersonagensResults()}</div>
+                    </Col>
                 </Row>             
                 <Row>
                     <Col>
