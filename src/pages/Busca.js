@@ -70,7 +70,7 @@ class ResultadosBuscaClass extends React.Component {
     }
 
     render() {
-        if (this.state.ListaSeries.length == 0){
+        if (this.state.ListaSeries.length === 0){
             return (<div className='Spinner'><Spinner animation="border" /></div>)
         }
         return(
