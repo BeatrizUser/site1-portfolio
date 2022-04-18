@@ -4,9 +4,9 @@ import './style/rodape.css'
 
 function Rodape(){
     return(
-      <footer className="footer-copyright">
+      <footer className="footer">
         <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} Copyright: <strong>Desenvolvido por</strong> <a href="https://github.com/BeatrizUser">Beatriz Machado</a> 
+          &copy; {new Date().getFullYear()} Copyright:<a className="footer-linkGitHub" href="https://github.com/BeatrizUser">Desenvolvido por Beatriz Machado</a>
         </div>
       </footer>
   )

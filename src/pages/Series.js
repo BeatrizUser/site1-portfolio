@@ -39,7 +39,7 @@ class SerieClass extends React.Component {
     _montaListaCriadores(){
         return this.state.Serie.creators.items.map((criador)=>(
             <div>
-                <h5>{criador.name}</h5>
+                <h5 className="titulo-Busca">{criador.name}</h5>
             </div>
         ));
     }
@@ -53,10 +53,10 @@ class SerieClass extends React.Component {
             <Container>
                 <Row>
                      <Col>
-                        <Row><h3>{this.state.Serie.title}</h3></Row>
-                        <Row><h4>Description</h4></Row>
+                        <Row><h3 className="titulo-Busca">{this.state.Serie.title}</h3></Row>
+                        <Row><h4 className="titulo-Busca">Description</h4></Row>
                         <Row>
-                            <h4>Criadores</h4>
+                            <h4 className="titulo-Busca">Criadores</h4>
                             {this. _montaListaCriadores()}
                         </Row>
                      </Col>

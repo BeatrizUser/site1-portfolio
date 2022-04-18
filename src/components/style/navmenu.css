@@ -1,12 +1,12 @@
-a{
-    text-decoration: none;
+.Navmenu-item-animado{
+    text-decoration: none !important;
     color: #777!important;
     display: flex;
     transition: 1s ease all;
     align-items: center!important;
     padding-left: 10px;
 }
-a:hover {
+.Navmenu-item-animado:hover {
     color: #fff !important;
 }
 .align-center{

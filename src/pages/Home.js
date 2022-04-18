@@ -37,8 +37,8 @@ const App = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="/about">Sobre</Link>               
+            <Link className='Navmenu-item-animado' to="/">Home</Link>
+            <Link className='Navmenu-item-animado' to="/about">Sobre</Link>               
           </Nav>
             <Form onSubmit={onSubmit} className="d-flex align-center" md="auto">
               <FormControl name='campoBusca' type="search" placeholder="Search" className="me-2" aria-label="Procurar" style={{ width: "auto" }} />

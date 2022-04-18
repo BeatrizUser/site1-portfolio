@@ -68,11 +68,11 @@ class PersonagemClass extends React.Component {
                          <img className='Personagem_FotoProfile' src={this._montaImagem(this.state.personagem.thumbnail, "portrait_incredible")} alt=''/>
                      </Col>
                      <Col className='Personagem-Info'>
-                         <Row>{ this.state.personagem.name }</Row>
-                         <Row>{ this.state.personagem.description }</Row>
+                         <Row className="titulo-Busca">{ this.state.personagem.name }</Row>
+                         <Row className="titulo-Busca">{ this.state.personagem.description }</Row>
                             <Row>
                                 <Col>
-                                <Row>Lista Séries</Row>
+                                <Row className="titulo-Busca">Lista Séries</Row>
                                 <Row>{this._montaListaSeries()}</Row>
                                 </Col>
                             </Row>

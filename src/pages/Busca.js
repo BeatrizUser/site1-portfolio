@@ -82,13 +82,13 @@ class ResultadosBuscaClass extends React.Component {
 
                 <Row>
                     <Col>
-                        <div>Personagens</div>
+                        <div className="titulo-Busca">Personagens</div>
                         <div className='listapersonagens'>{this._montaPersonagensResults()}</div>
                     </Col>
                 </Row>             
                 <Row>
                     <Col>
-                        <div>Series</div>
+                        <div className="titulo-Busca">Series</div>
                         <div className='listaseries'>{this._montaSeriesResults()}</div>
                     </Col>
                 </Row>
