@@ -14,7 +14,7 @@ export default function ResultadosBusca () {
 class ResultadosBuscaClass extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { ListaPersonagens: [], ListaSeries: [], ListaPersonagens_Filtrada: []};
+        this.state = { ListaPersonagens: [], ListaSeries: [], ListaPersonagens_Filtrada: [], ListaSeries_Filtrada: []};
         this.query = new URLSearchParams(props.params.search).get('q')
         this._Busca(this.query)
         this._filtro = this._filtro.bind(this);
@@ -29,6 +29,7 @@ class ResultadosBuscaClass extends React.Component {
             const ListaPersonagens = resp1.data.data.results
             const ListaPersonagens_Filtrada = resp1.data.data.results
             const ListaSeries = resp2.data.data.results
+            const ListaSeries_Filtrada = resp1.data.data.results
             this.setState({ ListaPersonagens, ListaSeries, ListaPersonagens_Filtrada })
             console.log(ListaPersonagens, ListaSeries)
             
@@ -59,10 +60,13 @@ class ResultadosBuscaClass extends React.Component {
     _filtro(event){
         console.log(event)
         const filtro = event.target.value
-        const lista_filtrada = this.state.ListaPersonagens.filter((item)=>{
+        const lista_personagem_filtrada = this.state.ListaPersonagens.filter((item)=>{
             return item.name.toLowerCase().includes(filtro.toLowerCase())
         })
-        this.setState ({ ListaPersonagens_Filtrada: lista_filtrada })
+        const lista_serie_filtrada = this.state.ListaSeries.filter((item)=>{
+            return item.title.toLowerCase().includes(filtro.toLowerCase())
+        })
+        this.setState ({ ListaPersonagens_Filtrada: lista_personagem_filtrada, ListaSeries_Filtrada: lista_serie_filtrada })
     }
 
     render() {
