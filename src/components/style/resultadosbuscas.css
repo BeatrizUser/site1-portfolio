@@ -5,12 +5,12 @@ img{
 img:hover{
     opacity: 0.5;
 }
-.listsaseries{
+.listaseries{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.listsapersonagens{
+.listapersonagens{
     display: flex;
 }
 li{

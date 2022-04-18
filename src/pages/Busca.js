@@ -14,9 +14,10 @@ export default function ResultadosBusca () {
 class ResultadosBuscaClass extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { listaResultados1: [], listaResultados2: []};
+        this.state = { ListaPersonagens: [], ListaSeries: [], ListaPersonagens_Filtrada: []};
         this.query = new URLSearchParams(props.params.search).get('q')
         this._Busca(this.query)
+        this._filtro = this._filtro.bind(this);
     }
 
     async _Busca(input) {
@@ -25,49 +26,61 @@ class ResultadosBuscaClass extends React.Component {
                 axios.get(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${input}&apikey=0843d25996d0a99345630a3e6035a7e7`),
                 axios.get(`https://gateway.marvel.com/v1/public/series?titleStartsWith=${input}&apikey=0843d25996d0a99345630a3e6035a7e7`)
             ])
-            const listaResultados1 = resp1.data.data.results
-            const listaResultados2 = resp2.data.data.results
-            this.setState({ listaResultados1, listaResultados2 })
-            console.log(listaResultados1, listaResultados2)
+            const ListaPersonagens = resp1.data.data.results
+            const ListaPersonagens_Filtrada = resp1.data.data.results
+            const ListaSeries = resp2.data.data.results
+            this.setState({ ListaPersonagens, ListaSeries, ListaPersonagens_Filtrada })
+            console.log(ListaPersonagens, ListaSeries)
             
         } catch (error) {
             // console.log(error)
         }
     }
     _montaPersonagensResults(){
-        return this.state.listaResultados1.map((item)=>(
+        return this.state.ListaPersonagens_Filtrada.map((item)=>(
             <li>
                 <a href={`/personagens/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/personagens/${item.id}`}>{item.name}</Link>
             </li>
         ));
     }
     _montaSeriesResults(){
-        return this.state.listaResultados2.map((item)=>(
+        
+        return this.state.ListaSeries.map((item)=>(
             <li>
                 <a href={`/series/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/series/${item.id}`}>{item.title}</Link>
             </li>
         ));
     }
+
     _montaImagem(image, aspect){
         return image.path + "/" + aspect +"." + image.extension
+    }
+
+    _filtro(event){
+        console.log(event)
+        const filtro = event.target.value
+        const lista_filtrada = this.state.ListaPersonagens.filter((item)=>{
+            return item.name.toLowerCase().includes(filtro.toLowerCase())
+        })
+        this.setState ({ ListaPersonagens_Filtrada: lista_filtrada })
     }
 
     render() {
         return(
             <Container>               
                 <Form className="d-flex align-center filtro" md="auto">
-                    <FormControl type="search" placeholder="Filtrar" className="me-2" aria-label="Filtrar" style={{ width: "25vw"}} />
+                    <FormControl onChange={this._filtro} type="search" placeholder="Filtrar" className="me-2" aria-label="Filtrar" style={{ width: "25vw"}} />
                     <Button variant="dark">Filtrar</Button>
                 </Form>
 
                 <Row>
                 <div>Personagens</div>
-                    <div className='listsapersonagens'>{this._montaPersonagensResults()}</div>
+                    <div className='listapersonagens'>{this._montaPersonagensResults()}</div>
                 </Row>             
                 <Row>
                     <Col>
                         <div>Series</div>
-                        <div className='listsaseries'>{this._montaSeriesResults()}</div>
+                        <div className='listaseries'>{this._montaSeriesResults()}</div>
                     </Col>
                 </Row>
             </Container>
