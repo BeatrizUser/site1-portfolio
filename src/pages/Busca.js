@@ -39,16 +39,16 @@ class ResultadosBuscaClass extends React.Component {
     }
     _montaPersonagensResults(){
         return this.state.ListaPersonagens_Filtrada.map((item)=>(
-            <li>
-                <a href={`/personagens/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/personagens/${item.id}`}>{item.name}</Link>
+            <li className='Result-Personagem'>
+                <a className='Result-Personagem' href={`/personagens/${item.id}`}><img className='Image-result' src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/personagens/${item.id}`}>{item.name}</Link>
             </li>
         ));
     }
     _montaSeriesResults(){
         
         return this.state.ListaSeries_Filtrada.map((item)=>(
-            <li>
-                <a href={`/series/${item.id}`}><img src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/series/${item.id}`}>{item.title}</Link>
+            <li className='Result-Serie'>
+                <a className='Result-Serie' href={`/series/${item.id}`}><img className='Image-result' src={this._montaImagem(item.thumbnail, "standard_large")} alt=""/></a><Link to={`/series/${item.id}`}>{item.title}</Link>
             </li>
         ));
     }
@@ -71,7 +71,7 @@ class ResultadosBuscaClass extends React.Component {
 
     render() {
         if (this.state.ListaSeries.length === 0){
-            return (<div className='Spinner'><Spinner animation="border" /></div>)
+            return (<div className='Loading'><Spinner animation="border" /></div>)
         }
         return(
             <Container>               

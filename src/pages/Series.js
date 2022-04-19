@@ -4,6 +4,7 @@ import React from 'react'
 import '../components/style/Serie.css'
 import { useParams } from 'react-router';
 
+
 export default function Serie () {
     const params = useParams();
     return <SerieClass params={params}/>
@@ -35,14 +36,14 @@ class SerieClass extends React.Component {
     _montaImagemFullSize(image){
         return image.path + "." + image.extension
     }
-
-    _montaListaCriadores(){
-        return this.state.Serie.creators.items.map((criador)=>(
+    _montaListaComics(){
+        return this.state.Serie.comics.items.map((item)=>(
             <div>
-                <h5 className="titulo-Busca">{criador.name}</h5>
+                <img className='imagem-Comic' src={this._montaImagemFullSize(this.state.Serie.thumbnail)} alt=""/><li className='titulo-Comic'>{item.name}</li>
             </div>
-        ));
+            ))
     }
+
   
     render() {
         if (!this.state.Serie){
@@ -53,17 +54,17 @@ class SerieClass extends React.Component {
             <Container>
                 <Row>
                      <Col>
-                        <Row><h3 className="titulo-Busca">{this.state.Serie.title}</h3></Row>
-                        <Row><h4 className="titulo-Busca">Description</h4></Row>
-                        <Row>
-                            <h4 className="titulo-Busca">Criadores</h4>
-                            {this. _montaListaCriadores()}
-                        </Row>
+                        <Row><h3 className="titulo-Serie">{this.state.Serie.title}</h3></Row>
+                        <Row><h4 className="description-Serie">{this.state.Serie.description}</h4></Row>
                      </Col>
 
-                     <Col>
-                        <img src={this._montaImagemFullSize(this.state.Serie.thumbnail)}></img>
+                     <Col className='colImagem-Serie'>
+                        <img className='imagem-Serie' src={this._montaImagemFullSize(this.state.Serie.thumbnail)} alt=""></img>
                      </Col>
+                </Row>
+                <Row>
+                    <Row><h3 className="titulo-Serie">Comics</h3></Row>
+                    <Col className='col-Comic'>{this._montaListaComics()}</Col> 
                 </Row>
             </Container>
         )

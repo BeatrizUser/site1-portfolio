@@ -1,33 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
-*{
-  font-family: 'Oswald', sans-serif;
+.titulo-Serie, .description-Serie, .titulo-Comic{
+  color: #fff;
+  padding: 5px;
 }
-.Personagem_InfoArea{
-  padding: 10px 10vw;
-  background-color: rgb(28, 30, 33);
+.description-Serie{
+  font-size: 100%;
+}
+.imagem-Serie{
+  max-width: 350px;
+}
+.colImagem-Serie{
   display: flex;
-}
-.Personagem_BackDrop{
-  margin: -15px !important;
-  width: 100vw;
-  height: 35vh;
-  object-fit: cover;
-}
-.Personagem_FotoProfile{
-  margin-right: 10px;
-  width: 20vw;
-  height: 25vw;
-  object-fit: cover;
-  border-radius: 5px;
-}
-.Personagem-Info{
-  width: 300px;
-  color: rgb(29, 29, 29);
-}
-.Spinner{
-  display:flex;
-  align-items: center;
   justify-content: center;
-  
+}
+.imagem-Comic{
+  border-radius: 10px;
+  width: 160px;
+  height: 220px;
+  padding: 5px;
+}
+.titulo-Comic{
+  font-size: 15px;
+}
+.col-Comic{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

@@ -1,8 +1,9 @@
-img{
+.Image-result{
     border-radius: 5px;
+    padding-bottom: 5px;
     transition: all 1s ease;
 }
-img:hover{
+.Image-result:hover{
     opacity: 0.5;
 }
 .listaseries{
@@ -22,3 +23,13 @@ li{
 .titulo-Busca{
     color: #efefef;
 }
+.Result-Serie, .Result-Personagem{
+    padding-top: 12px;
+}
+.Loading{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
